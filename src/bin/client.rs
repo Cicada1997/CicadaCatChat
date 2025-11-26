@@ -51,11 +51,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let     reader       = BufReader::new(reader);
     let mut lines        = reader.lines();
 
-    {
-        let mut writer_locked = writer.lock().await;
-        writer_locked.write_all(format!("{username}\n").as_bytes()).await?;
-    }
-
     // SETUP SHARED STATE & TUI
     let app       = Arc::new(Mutex::new(App::new().unwrap()));
     let app_recv  = Arc::clone(&app);
@@ -64,7 +59,15 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
 
     // UPDATE APP ATTRIBUTES
+    let username_clone = username.clone();
+    let writer_login_clone = Arc::clone(&writer);
+
     tokio::spawn(async move {
+        {
+            let mut writer_locked = writer_login_clone.lock().await;
+            writer_locked.write_all(format!("{username_clone}\n").as_bytes()).await;
+        }
+
         while let Ok(Some(line)) = lines.next_line().await {
             if let Ok(msg) = serde_json::from_str::<ChatMessage>(&line) {
                 let mut app = app_recv.lock().await;

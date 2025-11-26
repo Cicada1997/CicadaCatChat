@@ -13,6 +13,7 @@ pub enum MessageType {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ChatMessage {
+    // pub id: u128,
     pub username: String,
     pub content: String,
     pub timestamp: String,
@@ -31,6 +32,7 @@ pub fn create_msg(username: String, content: String, message_type: MessageType) 
     match message_type {
         MessageType::UserMessage => {
             return ChatMessage {
+                // id,
                 username,
                 content,
                 timestamp: time.to_string(),
