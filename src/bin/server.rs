@@ -55,13 +55,15 @@ macro_rules! extend {
 }
 
 
-fn load_msg_history() -> Result<Vec<ChatMessage>, Box<dyn Error>>{
-    let file   = File::open(MSG_HISTORY_PATH)?;
-    let reader = std::io::BufReader::new(file);
+fn load_msg_history() -> Result<Vec<ChatMessage>, Box<dyn Error>> {
+    if let Ok(file) = File::open(MSG_HISTORY_PATH) {
+        let reader = std::io::BufReader::new(file);
+        let data: Vec<ChatMessage> = serde_json::from_reader(reader)?;
 
-    let data: Vec<ChatMessage> = serde_json::from_reader(reader)?;
-
-    Ok(data)
+        return Ok(data);
+    } else {
+        return Ok(Vec::<ChatMessage>::new());
+    };
 }
 
 fn save_msg_history(data: &Vec<ChatMessage>) -> Result<(), Box<dyn Error>> {

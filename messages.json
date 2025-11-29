@@ -820,5 +820,83 @@
     "content": "User \"cicada\" (127.0.0.1:48834) was disconnected from the chatroom.",
     "timestamp": "14:43:16",
     "message_type": "SystemMessage"
+  },
+  {
+    "username": "System",
+    "content": "User \"cicada\" (127.0.0.1:53144) has connected to the chatroom.",
+    "timestamp": "23:45:35",
+    "message_type": "SystemMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "no way",
+    "timestamp": "23:45:38",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "System",
+    "content": "User \"cicada\" (127.0.0.1:53144) was disconnected from the chatroom.",
+    "timestamp": "23:46:59",
+    "message_type": "SystemMessage"
+  },
+  {
+    "username": "System",
+    "content": "User \"cicada\" (127.0.0.1:46120) has connected to the chatroom.",
+    "timestamp": "15:13:27",
+    "message_type": "SystemMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "hej",
+    "timestamp": "15:13:28",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "nej",
+    "timestamp": "15:13:30",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "lkjhadsjklsdf",
+    "timestamp": "15:13:31",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "asdf",
+    "timestamp": "15:13:31",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "asdf",
+    "timestamp": "15:13:32",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "asd",
+    "timestamp": "15:13:32",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "fcls",
+    "timestamp": "15:13:34",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "cicada",
+    "content": "cls",
+    "timestamp": "15:13:34",
+    "message_type": "UserMessage"
+  },
+  {
+    "username": "System",
+    "content": "User \"cicada\" (127.0.0.1:46120) was disconnected from the chatroom.",
+    "timestamp": "15:13:53",
+    "message_type": "SystemMessage"
   }
 ]
